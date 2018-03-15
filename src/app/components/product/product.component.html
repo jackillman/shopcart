@@ -1,0 +1,20 @@
+<p>
+  product works!
+</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let prod of products" >
+        <div class="card">
+          <span class="product__id">{{prod.id}}</span>
+          <img src="assets/{{prod.photo}}" alt="{{prod.name}}"> 
+          <h1>{{prod.name}}</h1> 
+          <p> {{prod.price}}</p>
+          <a [routerLink]="['/cart', {id:prod.id}]">Купить</a>
+          
+          
+        </div>
+    </div>
+  </div>
+</div>
+
+

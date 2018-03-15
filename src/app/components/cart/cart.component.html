@@ -1,0 +1,34 @@
+<p>
+  Корзина
+</p>
+
+<table border="1">
+  <tr>
+    <th>Опция</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Photo</th>
+    <th>Quantity</th>
+    <th>Всего</th>
+
+  </tr>
+  <tr *ngFor="let item of items">
+      <td align="center"> 
+        <a (click)="remove(item.product.id)">X</a>
+      </td>
+      <td>{{item.product.id}}</td>
+      <td>{{item.product.name}}</td>
+      <td>{{item.product.price}}</td>
+      <td>
+        <img src="assets/{{item.product.photo}}">
+      </td>
+      <td>{{item.quantity}}</td>
+      <th>{{item.product.price * item.quantity}}</th>
+  
+    </tr>
+    <tr>
+      <td colspan="5" align="right">Сумма</td>
+     <td> {{total}}</td>
+    </tr>
+</table>
